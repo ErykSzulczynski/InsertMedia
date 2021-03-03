@@ -53,9 +53,7 @@ export default class Offer extends Component {
         
         `;
 
-        const OfferReadMore = styled.button`
-        
-        `;
+        const OfferReadMore = styled.button``;
 
         return (
             <Offer>

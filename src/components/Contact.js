@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export default class Contact extends Component {
     render() {
         const Contact = styled.div`
-            height: 100vh;
+            height: 90vh;
         `;
 
         const ContactContainer = styled.div``;
