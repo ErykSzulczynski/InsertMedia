@@ -1,0 +1,20 @@
+@import 'react-slideshow-image/dist/styles.css';
+
+body{
+  margin: 0;
+}
+
+.App {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+}
+
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active{
+  opacity: 1;
+  transition: all 600ms ease-in;
+}
