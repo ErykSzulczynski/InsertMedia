@@ -20,11 +20,12 @@ export default class Offer extends Component {
             grid-template-columns: auto auto auto;
             width: 70vw;
             margin: 0 auto;
-            grid-grap: 5vw;
+            grid-gap: 5vw;
         `;
 
         const OfferItem = styled.div`
             width: 100%;
+            padding: 1vw;
             border-radius: 5px;
             background: white;
         `;
@@ -53,7 +54,24 @@ export default class Offer extends Component {
         
         `;
 
-        const OfferReadMore = styled.button``;
+        const OfferReadMore = styled.button`
+            cursor: pointer;
+            display: block;
+            background: none;
+            color: #6AA0A2;
+            border: 2px solid #6AA0A2;
+            padding: 1vh 4vw;
+            font-size: 1.4rem;
+            border-radius: 5px;
+            margin: 0 auto;
+            margin-top: 3vh;
+            transition-duration: .3s;
+
+            &:hover{
+                color: white;
+                background: #6AA0A2;
+            }
+        `;
 
         return (
             <Offer>
@@ -72,7 +90,7 @@ export default class Offer extends Component {
                                 </OfferAmount>
                             </OfferPrice>
                             <OfferText>
-                                Lorem
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id metus libero. Nulla eget lacus elit. Donec volutpat varius urna id finibus. Nunc bibendum semper auctor. Curabitur sit amet placerat neque, sit amet congue odio. Vestibulum suscipit, elit at semper pharetra, dui nibh hendrerit tortor, eget rhoncus eros nunc ut lacus. Suspendisse massa lectus, viverra at ligula in, bibendum pulvinar orci. Nulla hendrerit tristique eleifend. Nunc ullamcorper lorem sed rhoncus consectetur. Praesent eu augue turpis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
                             </OfferText>
                             <OfferDetails>
                                 Szczegóły
@@ -92,7 +110,7 @@ export default class Offer extends Component {
                                 </OfferAmount>
                             </OfferPrice>
                             <OfferText>
-                                Lorem
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id metus libero. Nulla eget lacus elit. Donec volutpat varius urna id finibus. Nunc bibendum semper auctor. Curabitur sit amet placerat neque, sit amet congue odio. Vestibulum suscipit, elit at semper pharetra, dui nibh hendrerit tortor, eget rhoncus eros nunc ut lacus. Suspendisse massa lectus, viverra at ligula in, bibendum pulvinar orci. Nulla hendrerit tristique eleifend. Nunc ullamcorper lorem sed rhoncus consectetur. Praesent eu augue turpis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
                             </OfferText>
                             <OfferDetails>
                                 Szczegóły
@@ -112,7 +130,7 @@ export default class Offer extends Component {
                                 </OfferAmount>
                             </OfferPrice>
                             <OfferText>
-                                Lorem
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id metus libero. Nulla eget lacus elit. Donec volutpat varius urna id finibus. Nunc bibendum semper auctor. Curabitur sit amet placerat neque, sit amet congue odio. Vestibulum suscipit, elit at semper pharetra, dui nibh hendrerit tortor, eget rhoncus eros nunc ut lacus. Suspendisse massa lectus, viverra at ligula in, bibendum pulvinar orci. Nulla hendrerit tristique eleifend. Nunc ullamcorper lorem sed rhoncus consectetur. Praesent eu augue turpis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
                             </OfferText>
                             <OfferDetails>
                                 Szczegóły
