@@ -14,6 +14,7 @@ import NavbarMobile from './components/NavbarMobile';
 import NavbarTop from './components/NavbarTop';
 import Home from './components/Home';
 import About from './components/About';
+import AboutDetails from './components/AboutDetails';
 import Offer from './components/Offer';
 import Team from './components/Team';
 import Contact from './components/Contact';
@@ -101,7 +102,8 @@ export default class App extends Component {
                     <NavbarTop switch={this.switchSection}/>
                 </BrowserView>
                     {this.state.activeSection == "home" ? <Home /> : null}
-                    {this.state.activeSection == "about" ? <About /> : null}
+                    {this.state.activeSection == "about" ? <About switch={this.switchSection}/> : null}
+                    {this.state.activeSection == "about-details" ? <AboutDetails switch={this.switchSection}/> : null}
                     {this.state.activeSection == "offer" ? <Offer /> : null}
                     {this.state.activeSection == "team" ? <Team /> : null}
                     {this.state.activeSection == "contact" ? <Contact /> : null}

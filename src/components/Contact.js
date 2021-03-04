@@ -29,8 +29,12 @@ export default class Contact extends Component {
             <Contact>
                 <ContactContainer>
                     <ContactLeftPanel>
-                        <ContactInfo></ContactInfo>
-                        <ContactInfo></ContactInfo>
+                        <ContactInfo>
+                            example@gmail.com
+                        </ContactInfo>
+                        <ContactInfo>
+                            +48 520 122 041
+                        </ContactInfo>
                     </ContactLeftPanel>
                     <ContactRightPanel>
                         <ContactForm></ContactForm>

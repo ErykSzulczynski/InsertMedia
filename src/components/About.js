@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import aboutImage from '../assets/about-image.jpg';
 
-export default function About() {
+export default function About(props) {
     const About = styled.div`
         position: relative;
         width: 100vw;
@@ -72,7 +72,7 @@ export default function About() {
                     placerat vitae leo sit amet, congue bibendum lorem. Duis sagittis lacinia urna at feugiat. Duis dictum, tortor ut aliquet consequat,
                     orci enim dignissim massa, a convallis ipsum est in nulla. Vestibulum sit amet commodo odio, sit amet finibus dolor.
                     Duis pharetra ullamcorper justo, ut porttitor magna eleifend lacinia.
-                    <AboutReadMore>
+                    <AboutReadMore onClick={() => {props.switch("about-details")}}>
                         Zobacz więcej
                     </AboutReadMore>
                 </AboutText>
