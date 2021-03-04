@@ -18,6 +18,8 @@ import AboutDetails from './components/AboutDetails';
 import Offer from './components/Offer';
 import Team from './components/Team';
 import Contact from './components/Contact';
+import OfferDetails from './components/OfferDetails';
+import OffersSection from './components/OffersSection';
 
 export default class App extends Component {
     constructor(){
@@ -104,7 +106,9 @@ export default class App extends Component {
                     {this.state.activeSection == "home" ? <Home /> : null}
                     {this.state.activeSection == "about" ? <About switch={this.switchSection}/> : null}
                     {this.state.activeSection == "about-details" ? <AboutDetails switch={this.switchSection}/> : null}
-                    {this.state.activeSection == "offer" ? <Offer /> : null}
+                    {this.state.activeSection == "offer" ? <Offer switch={this.switchSection}/> : null}
+                    {this.state.activeSection == "offer-details" ? <OfferDetails switch={this.switchSection}/> : null}
+                    {this.state.activeSection == "offers-section" ? <OffersSection switch={this.switchSection}/> : null}
                     {this.state.activeSection == "team" ? <Team /> : null}
                     {this.state.activeSection == "contact" ? <Contact /> : null}
                 <BrowserView>

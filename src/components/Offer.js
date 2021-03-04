@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 export default class Offer extends Component {
+    constructor(props) {
+        super(props);
+    }
+
     render() {
         const Offer = styled.div`
             position: relative;
@@ -92,7 +96,7 @@ export default class Offer extends Component {
                             <OfferText>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id metus libero. Nulla eget lacus elit. Donec volutpat varius urna id finibus. Nunc bibendum semper auctor. Curabitur sit amet placerat neque, sit amet congue odio. Vestibulum suscipit, elit at semper pharetra, dui nibh hendrerit tortor, eget rhoncus eros nunc ut lacus. Suspendisse massa lectus, viverra at ligula in, bibendum pulvinar orci. Nulla hendrerit tristique eleifend. Nunc ullamcorper lorem sed rhoncus consectetur. Praesent eu augue turpis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
                             </OfferText>
-                            <OfferDetails>
+                            <OfferDetails onClick={() => {this.props.switch('offer-details')}}>
                                 Szczegóły
                             </OfferDetails>
                         </OfferItem>
@@ -112,7 +116,7 @@ export default class Offer extends Component {
                             <OfferText>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id metus libero. Nulla eget lacus elit. Donec volutpat varius urna id finibus. Nunc bibendum semper auctor. Curabitur sit amet placerat neque, sit amet congue odio. Vestibulum suscipit, elit at semper pharetra, dui nibh hendrerit tortor, eget rhoncus eros nunc ut lacus. Suspendisse massa lectus, viverra at ligula in, bibendum pulvinar orci. Nulla hendrerit tristique eleifend. Nunc ullamcorper lorem sed rhoncus consectetur. Praesent eu augue turpis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
                             </OfferText>
-                            <OfferDetails>
+                            <OfferDetails onClick={() => {this.props.switch('offer-details')}}>
                                 Szczegóły
                             </OfferDetails>
                         </OfferItem>
@@ -132,12 +136,12 @@ export default class Offer extends Component {
                             <OfferText>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id metus libero. Nulla eget lacus elit. Donec volutpat varius urna id finibus. Nunc bibendum semper auctor. Curabitur sit amet placerat neque, sit amet congue odio. Vestibulum suscipit, elit at semper pharetra, dui nibh hendrerit tortor, eget rhoncus eros nunc ut lacus. Suspendisse massa lectus, viverra at ligula in, bibendum pulvinar orci. Nulla hendrerit tristique eleifend. Nunc ullamcorper lorem sed rhoncus consectetur. Praesent eu augue turpis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
                             </OfferText>
-                            <OfferDetails>
+                            <OfferDetails onClick={() => {this.props.switch('offer-details')}}>
                                 Szczegóły
                             </OfferDetails>
                         </OfferItem>
                     </OfferGridContainer>
-                    <OfferReadMore>
+                    <OfferReadMore onClick={() => {this.props.switch('offers-section')}}>
                         Zobacz więcej
                     </OfferReadMore>
                 </OfferItemsContainer>
