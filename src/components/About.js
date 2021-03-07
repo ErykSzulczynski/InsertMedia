@@ -23,17 +23,20 @@ export default function About(props) {
         border: 2px solid white;
         border-radius: 5px;
         height: 55vh;
-        background-image: url(../assets/about-image.jpg);
+        background-image: url(${aboutImage});
     `;
 
     const AboutText = styled.div`
-        width: 50%;
+        width: 70%;
         padding-left: 3vw;
+        font-size: 1.2rem;
     `;
 
     const AboutTitle = styled.h2`
         color: #6AA0A2;
         text-transform: uppercase;
+        font-size: 2.3rem;
+        margin-top: 0;
     `;
 
     const AboutReadMore = styled.button`

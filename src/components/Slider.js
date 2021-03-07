@@ -7,7 +7,7 @@ import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons
 
 export default function Slider() {
     const SliderContainer = styled.div`
-        width: 80vw;
+        width: 85vw;
         margin: 0 auto;
     `;
 
@@ -18,8 +18,8 @@ export default function Slider() {
     `;
 
     const OfferItemContainer = styled.div`
-        width: 20%;
-        height 30vh;
+        width: 30%;
+        height 40vh;
     `;
 
     const OfferItem = styled.div`
