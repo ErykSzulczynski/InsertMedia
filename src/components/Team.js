@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import userImage from '../assets/sample2.jpg';
 
 export default class Team extends Component {
     render() {
@@ -25,6 +26,10 @@ export default class Team extends Component {
             height: 30vh;
             border: 3px solid white;
             border-radius: 5px;
+            background-image: url(${userImage});
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
         `;
         
         const TeamName = styled.p`
