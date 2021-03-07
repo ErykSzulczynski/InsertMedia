@@ -36,26 +36,48 @@ export default class Offer extends Component {
 
         const OfferTitle = styled.h2`
             color: #6AA0A2;
+            font-size: 2.8rem;
+            margin-top: 0;
+            text-align: center;
         `;
 
         const OfferPrice = styled.div`
-
+            text-align: center;
         `;
 
         const OfferUnit = styled.p`
-
+            margin: 0;
+            opacity: 60%;
+            margin-bottom: -15px;
+            margin-left: -60px;
         `;
 
         const OfferAmount = styled.h3`
-
+            margin: 0;
+            font-size: 3rem;
+            color: #6AA0A2;
         `;
 
         const OfferText = styled.p`
-        
+            font-size: 1.2rem;
         `;
 
         const OfferDetails = styled.button`
-        
+            cursor: pointer;
+            display: block;
+            background: none;
+            width: 100%;
+            color: #6AA0A2;
+            border: 2px solid #6AA0A2;
+            padding: 1vh 4vw;
+            font-size: 1.4rem;
+            border-radius: 5px;
+            transition-duration: .3s;
+
+            &:hover{
+                color: white;
+                background: #6AA0A2;
+            }
         `;
 
         const OfferReadMore = styled.button`
