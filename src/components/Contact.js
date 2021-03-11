@@ -7,9 +7,13 @@ export default class Contact extends Component {
     render() {
         const Contact = styled.div`
             height: 90vh;
+            position: relative;
         `;
 
         const ContactContainer = styled.div`
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%,-50%);
             margin: 0 auto;
             width: 70vw;
             display: flex;
@@ -29,16 +33,17 @@ export default class Contact extends Component {
             font-size: 3rem;
             color: white;
             font-weight: bolder;
+            margin-top: 3vh;
         `;
 
         const ContactIcon = styled.span`
             color: #6AA0A2;
+            padding-right: 2vw;
         `;
 
         const ContactForm = styled.div`
-            border: 1px solid white;
+            border: 2px solid white;
             border-radius: 5px;
-            height: 50vh;
             width: 100%;
             padding: 3%;
         `;
@@ -49,6 +54,7 @@ export default class Contact extends Component {
             border-radius: 3px;
             font-size: 1.3rem;
             border: 1px solid gray;
+            margin-bottom: 3vh;
         `;
 
         const FormTextarea = styled.textarea`
@@ -57,6 +63,7 @@ export default class Contact extends Component {
             border-radius: 3px;
             font-size: 1.3rem;
             border: 1px solid gray;
+            min-height: 40vh;
         `;
 
         const FormSend = styled.button`
@@ -79,6 +86,14 @@ export default class Contact extends Component {
             }
         `;
 
+        const FormText = styled.p`
+            font-size: 3rem;
+            margin: 0;
+            margin-bottom: 3vh;
+            color: #6AA0A2;
+            font-weight: bolder;
+        `;
+
         return (
             <Contact>
                 <ContactContainer>
@@ -93,6 +108,7 @@ export default class Contact extends Component {
                     <ContactRightPanel>
                         <ContactForm>
                         <form>
+                            <FormText>Wyślij nam wiadomość</FormText>
                             <FormInput type="text" name="email" placeholder="Twój email"/><br/>
                             <FormTextarea placeholder="Wiadomość"></FormTextarea><br/>
                             <FormSend>Wyślij</FormSend>

@@ -18,3 +18,8 @@ body{
   opacity: 1;
   transition: all 600ms ease-in;
 }
+
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
