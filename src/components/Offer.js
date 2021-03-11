@@ -22,7 +22,7 @@ export default class Offer extends Component {
         const OfferGridContainer = styled.div`
             display: grid;
             grid-template-columns: auto auto auto;
-            width: 70vw;
+            width: 60vw;
             margin: 0 auto;
             grid-gap: 5vw;
         `;
@@ -35,14 +35,18 @@ export default class Offer extends Component {
         `;
 
         const OfferTitle = styled.h2`
-            color: #6AA0A2;
-            font-size: 2.8rem;
+            color: #2D3436;
+            font-size: 3rem;
             margin-top: 0;
+            margin-bottom: 1vh;
             text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 5px;
         `;
 
         const OfferPrice = styled.div`
             text-align: center;
+            margin-bottom: 1vh;
         `;
 
         const OfferUnit = styled.p`

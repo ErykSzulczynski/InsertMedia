@@ -12,7 +12,7 @@ export default class Team extends Component {
         const TeamGridContainer = styled.div`
             display: grid;
             grid-template-columns: auto auto auto;
-            width: 60%;
+            width: 50%;
             margin: 0 auto;
             grid-gap: 5vw;
         `;
@@ -23,7 +23,7 @@ export default class Team extends Component {
 
         const TeamPhoto = styled.div`
             width: 100%;
-            height: 30vh;
+            height: 25vh;
             border: 3px solid white;
             border-radius: 5px;
             background-image: url(${userImage});
