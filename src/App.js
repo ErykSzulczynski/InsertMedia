@@ -55,6 +55,10 @@ export default class App extends Component {
             overflow: hidden;
             min-height: 100vh;
             background: #2D3436;
+
+            @media (max-width: 768px) {
+                overflow: auto;
+            }
         `;
 
         const Footer = styled.div`
@@ -160,6 +164,8 @@ export default class App extends Component {
                 </BrowserView>
                 <MobileView>
                     <About/>
+                    <Offer/>
+                    <Contact/>
                 </MobileView>
                 {/*<About />*/}
             </App>

@@ -20,14 +20,27 @@ export default class Contact extends Component {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
+
+            @media (max-width: 768px) {
+                flex-direction: column;
+                width: 90vw;
+            }
         `;
 
         const ContactLeftPanel = styled.div`
             width: 60%;
+
+            @media (max-width: 768px) {
+                width: 90%;
+            }
         `;
 
         const ContactRightPanel = styled.div`
             width: 40%;
+
+            @media (max-width: 768px) {
+                width: 100%;
+            }
         `;
 
         const ContactInfo = styled.div`

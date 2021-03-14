@@ -18,6 +18,10 @@ export default class Offer extends Component {
             position: absolute;
             top: 50%; left: 50%;
             transform: translate(-50%,-50%);
+
+            @media (max-width: 768px) {
+                position: relative;
+            }
         `;
 
         const OfferGridContainer = styled.div`
@@ -26,6 +30,11 @@ export default class Offer extends Component {
             width: 60vw;
             margin: 0 auto;
             grid-gap: 5vw;
+
+            @media (max-width: 768px) {
+                width: 80vw;
+                grid-template-columns: auto;
+            }
         `;
 
         const OfferItem = styled.div`

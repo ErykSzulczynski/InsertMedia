@@ -56,14 +56,14 @@ export default class NavbarMobile extends Component {
                             Oferta
                         </NavbarLinkText>
                     </NavbarLink>
-                    <NavbarLink onClick={() => this.props.switch("team")}>
+                    {/*<NavbarLink onClick={() => this.props.switch("team")}>
                         <NavbarLinkIcon>
                             <FontAwesomeIcon icon={faUsers} />
                         </NavbarLinkIcon>
                         <NavbarLinkText>
                             Zespół
                         </NavbarLinkText>
-                    </NavbarLink>
+                        </NavbarLink>*/}
                     <NavbarLink onClick={() => this.props.switch("contact")}> 
                         <NavbarLinkIcon>
                             <FontAwesomeIcon icon={faIdBadge} />

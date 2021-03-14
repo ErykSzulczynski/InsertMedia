@@ -17,6 +17,11 @@ export default function About(props) {
         transform: translate(-50%,-50%);
         display: flex;
         justify-conent: center;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+            position: relative;
+        }
     `;
 
     const AboutImageContainer = styled.div`
@@ -25,12 +30,20 @@ export default function About(props) {
         border-radius: 5px;
         height: 55vh;
         background-image: url(${aboutImage});
+
+        @media (max-width: 768px) {
+            width: 90%;
+        }
     `;
 
     const AboutText = styled.div`
         width: 70%;
         padding-left: 3vw;
         font-size: 1.2rem;
+
+        @media (max-width: 768px) {
+            width: 90%;
+        }
     `;
 
     const AboutTitle = styled.h2`
@@ -55,6 +68,7 @@ export default function About(props) {
         &:hover{
             color: white;
             background: #6AA0A2;
+            width: 100%;
         }
     `;
 
