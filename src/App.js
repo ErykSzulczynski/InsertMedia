@@ -27,6 +27,7 @@ export default class App extends Component {
 
         this.state = {
             activeSection: "home",
+            isMobileOpen: false,
         }
 
         this.switchSection = this.switchSection.bind(this);
@@ -36,6 +37,14 @@ export default class App extends Component {
         this.setState(() => {
             return {
                 activeSection: name
+            } 
+        });
+    }
+
+    toggleMobile = () => {
+        this.setState(() => {
+            return {
+                isMobileOpen: !this.state.isMobileOpen
             } 
         });
     }
@@ -149,6 +158,9 @@ export default class App extends Component {
                         </ModeSwitch>
                     </Footer>
                 </BrowserView>
+                <MobileView>
+                    <About/>
+                </MobileView>
                 {/*<About />*/}
             </App>
         );
