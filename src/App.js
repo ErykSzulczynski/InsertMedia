@@ -42,10 +42,10 @@ export default class App extends Component {
 
     render(){
         const App = styled.div`
+            position: relative;
             overflow: hidden;
             min-height: 100vh;
             background: #2D3436;
-            z-index: -50;
         `;
 
         const Footer = styled.div`
@@ -53,6 +53,7 @@ export default class App extends Component {
             bottom: 1vw;
             right: 0;
             display: flex;
+            z-index: 100 !important
         `;
 
         const Socials = styled.div`
@@ -112,8 +113,8 @@ export default class App extends Component {
                     {this.state.activeSection == "team" ? <Team /> : null}
                     {this.state.activeSection == "contact" ? <Contact /> : null}
                 <BrowserView>
-                    {/*<PatternLeft src={pattern}/>*/}
-                    {/*<PatternRight src={pattern}/>*/}
+                    <PatternLeft src={pattern}/>
+                    <PatternRight src={pattern}/>
                     <Footer>
                         <Socials>
                             <SocialsItem>

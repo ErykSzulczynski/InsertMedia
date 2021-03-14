@@ -8,6 +8,7 @@ export default function About(props) {
         width: 100vw;
         height: 90vh;
         color: white;
+        z-index: 100 !important;
     `;
 
     const AboutContent = styled.div`

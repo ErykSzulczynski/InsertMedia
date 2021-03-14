@@ -3,12 +3,13 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
-export default function OfferDetails() {
+export default function OfferDetails(props) {
     const About = styled.div`
         position: relative;
         width: 100vw;
-        height: 90vh;
+        min-height: 85vh;
         color: white;
+        z-index: 100 !important
     `;
 
     const AboutContent = styled.div`
@@ -50,7 +51,7 @@ export default function OfferDetails() {
         <About>
             <AboutContent>
                 <AboutText>
-                    <GoBack>
+                    <GoBack onClick={() => props.switch('offer')}>
                         <FontAwesomeIcon icon={faArrowLeft} /><GoBackText>Powrót</GoBackText>
                     </GoBack>
                     <AboutTitle>

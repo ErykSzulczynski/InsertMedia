@@ -11,6 +11,7 @@ export default class Offer extends Component {
             position: relative;
             width: 100%;
             height: 90vh;
+            z-index: 100 !important
         `;
 
         const OfferItemsContainer = styled.div`

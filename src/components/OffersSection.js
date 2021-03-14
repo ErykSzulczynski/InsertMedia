@@ -5,12 +5,16 @@ export default function OffersSection(props) {
     const Offer = styled.div`
             position: relative;
             width: 100%;
-            height: 90vh;
+            min-height: 90vh;
+            margin-bottom: 5vh;
+            z-index: 100 !imporant;
         `;
 
         const OfferItemsContainer = styled.div`
+            position: relative;
             margin: 0 auto;
-            margin-top: 5vh
+            margin-top: 5vh;
+            z-index: 100 !important;
         `;
 
         const OfferGridContainer = styled.div`

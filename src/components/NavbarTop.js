@@ -7,16 +7,14 @@ export default class NavbarTop extends Component {
     constructor(props){
         super(props);
     }
-
-    componentDidMount(){
-        console.log(this.props.name);
-    }
     
     render() {
         const Navbar = styled.div`
             display: grid;
             height: 10vh;
             grid-template-columns: 25% 50% 25%;
+            position: relative;
+            z-index: 100 !important;
         `;
 
         const GridItem = styled.div`

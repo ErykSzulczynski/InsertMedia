@@ -7,8 +7,9 @@ export default function AboutDetails(props) {
     const About = styled.div`
         position: relative;
         width: 100vw;
-        height: 90vh;
+        min-height: 85vh;
         color: white;
+        z-index: 100 !important;
     `;
 
     const AboutContent = styled.div`
@@ -50,7 +51,7 @@ export default function AboutDetails(props) {
         <About>
             <AboutContent>
                 <AboutText>
-                    <GoBack>
+                    <GoBack onClick={() => props.switch('about')}>
                         <FontAwesomeIcon icon={faArrowLeft} /><GoBackText>Powrót</GoBackText>
                     </GoBack>
                     <AboutTitle>

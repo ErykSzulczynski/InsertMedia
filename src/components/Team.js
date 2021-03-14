@@ -5,7 +5,9 @@ import userImage from '../assets/sample2.jpg';
 export default class Team extends Component {
     render() {
         const Team = styled.div`
-            height: 90vh;
+            position: relative;
+            z-index: 100 !important;
+            height: 80vh;
             margin-top: 5vh;
         `;
 

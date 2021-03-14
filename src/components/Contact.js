@@ -8,6 +8,7 @@ export default class Contact extends Component {
         const Contact = styled.div`
             height: 90vh;
             position: relative;
+            z-index: 100 !important;
         `;
 
         const ContactContainer = styled.div`
