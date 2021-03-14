@@ -63,8 +63,18 @@ export default class App extends Component {
             padding-right: 2vw;
         `;
 
-        const SocialsItem = styled.div`
+        const SocialsItem = styled.a`
+            cursor: pointer;
             padding: 0 0.5vw;
+            transition-duration: .3s;
+
+            &:visited {
+                color: #6AA0A2;
+            }
+
+            &:hover{
+                color: white;
+            }
         `;
 
         const ModeSwitch = styled.div`
@@ -117,10 +127,10 @@ export default class App extends Component {
                     <PatternRight src={pattern}/>
                     <Footer>
                         <Socials>
-                            <SocialsItem>
+                            <SocialsItem href="https://www.google.com/" target="blank">
                                 <FontAwesomeIcon icon={faFacebook} />
                             </SocialsItem>
-                            <SocialsItem>
+                            <SocialsItem href="https://www.google.com/">
                                 <FontAwesomeIcon icon={faInstagram} />
                             </SocialsItem>
                             <SocialsItem>

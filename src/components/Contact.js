@@ -95,9 +95,20 @@ export default class Contact extends Component {
             font-weight: bolder;
         `;
 
+        const ContactBackground = styled.span`
+            display: block;
+            position: absolute;
+            font-size: 30rem;
+            color: black;
+            opacity: 0.1;
+            left: 20vw;
+            z-index: 1;
+        `;
+
         return (
             <Contact>
                 <ContactContainer>
+                    <ContactBackground><FontAwesomeIcon icon={faPhone} /></ContactBackground>
                     <ContactLeftPanel>
                         <ContactInfo>
                             <ContactIcon><FontAwesomeIcon icon={faPhone} /></ContactIcon>example@gmail.com

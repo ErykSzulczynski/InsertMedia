@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import img from '../assets/sample.jpg';
 
 export default function AboutDetails(props) {
     const About = styled.div`
@@ -29,6 +30,22 @@ export default function AboutDetails(props) {
         text-transform: uppercase;
         font-size: 2.3rem;
         margin-top: 0;
+    `;
+
+    const AboutImageContainer = styled.div`
+        text-align: center;
+        margin: 3vh 0;
+    `;
+
+    const AboutImage = styled.img`
+        border-radius: 5px;
+    `;
+
+    const AboutImageText = styled.p`
+        margin: 0;
+        margin-top: 1vh;
+        font-weight: lighter;
+        opacity: 0.7;
     `;
 
     const GoBack = styled.div`
@@ -61,7 +78,13 @@ export default function AboutDetails(props) {
                     Sed interdum ante nec malesuada venenatis. Proin tincidunt in quam at facilisis. Nulla ut rhoncus ipsum. Sed ante sem,
                     placerat vitae leo sit amet, congue bibendum lorem. Duis sagittis lacinia urna at feugiat. Duis dictum, tortor ut aliquet consequat,
                     orci enim dignissim massa, a convallis ipsum est in nulla. Vestibulum sit amet commodo odio, sit amet finibus dolor.
-                    Duis pharetra ullamcorper justo, ut porttitor magna eleifend lacinia.<br/><br/>
+                    Duis pharetra ullamcorper justo, ut porttitor magna eleifend lacinia.<br/>
+                    <AboutImageContainer>
+                        <AboutImage src={img}/>
+                        <AboutImageText>
+                            Description of photo
+                        </AboutImageText>
+                    </AboutImageContainer>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam augue eros, venenatis vel placerat vitae, congue sit amet nisl.
                     Sed interdum ante nec malesuada venenatis. Proin tincidunt in quam at facilisis. Nulla ut rhoncus ipsum. Sed ante sem,
                     placerat vitae leo sit amet, congue bibendum lorem. Duis sagittis lacinia urna at feugiat. Duis dictum, tortor ut aliquet consequat,
