@@ -13,6 +13,7 @@ export default class Contact extends Component {
             @media (max-width: 768px) {
                 height: auto;
                 min-height: 90vh;
+                margin-bottom: 5vh;
             }
         `;
 
@@ -41,6 +42,7 @@ export default class Contact extends Component {
 
             @media (max-width: 768px) {
                 width: 90%;
+                margin-bottom: 5vh;
             }
         `;
 
@@ -53,7 +55,7 @@ export default class Contact extends Component {
         `;
 
         const ContactInfo = styled.div`
-            font-size: 3rem;
+            font-size: 2rem;
             color: white;
             font-weight: bolder;
             margin-top: 3vh;
@@ -69,6 +71,11 @@ export default class Contact extends Component {
             border-radius: 5px;
             width: 100%;
             padding: 3%;
+
+            @media (max-width: 768px) {
+                width: 90%;
+                padding: 5%;
+            }
         `;
 
         const FormInput = styled.input`

@@ -13,7 +13,9 @@ export default function About(props) {
         @media (max-width: 768px) {
             min-height: 90vh;
             height: auto;
-            margin-bottom: 10vh;
+            margin: 0 auto;
+            margin-bottom: 20vh;
+            width: 90vw;
             position: static;
         }
     `;
@@ -42,7 +44,7 @@ export default function About(props) {
         background-image: url(${aboutImage});
 
         @media (max-width: 768px) {
-            width: 90%;
+            width: 100%;
         }
     `;
 
@@ -61,6 +63,10 @@ export default function About(props) {
         text-transform: uppercase;
         font-size: 2.3rem;
         margin-top: 0;
+
+        @media (max-width: 768px) {
+            margin: 3vh 0;
+        }
     `;
 
     const AboutReadMore = styled.button`
@@ -78,6 +84,9 @@ export default function About(props) {
         &:hover{
             color: white;
             background: #6AA0A2;
+        }
+
+        @media (max-width: 768px) {
             width: 100%;
         }
     `;

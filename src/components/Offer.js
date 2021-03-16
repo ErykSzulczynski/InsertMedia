@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import { BrowserView, MobileView } from "react-device-detect";
 
 export default class Offer extends Component {
     constructor(props) {
@@ -17,6 +18,7 @@ export default class Offer extends Component {
                 position: static;
                 height: auto;
                 min-height: 90vh;
+                margin-bottom: 20vh;
             }
         `;
 
@@ -41,7 +43,7 @@ export default class Offer extends Component {
             grid-gap: 5vw;
 
             @media (max-width: 768px) {
-                width: 80vw;
+                width: 90vw;
                 grid-template-columns: auto;
             }
         `;
@@ -51,6 +53,12 @@ export default class Offer extends Component {
             padding: 1vw;
             border-radius: 5px;
             background: white;
+
+            @media (max-width: 768px) {
+                width: 80vw;
+                padding: 5vw;
+                margin-bottom: 10vh;
+            }
         `;
 
         const OfferTitle = styled.h2`
@@ -120,10 +128,28 @@ export default class Offer extends Component {
                 color: white;
                 background: #6AA0A2;
             }
+
+            @media (max-width: 768px) {
+                width: 90%;
+                margin-top: 0;
+                margin-bottom: 10vh;
+            }
+        `;
+
+        const OfferSectionTitle = styled.p`
+            color: #6AA0A2;
+            text-transform: uppercase;
+            font-size: 2.3rem;
+            margin: 3vh 0;
+            text-align: center;
+            font-weight: bolder;
         `;
 
         return (
             <Offer>
+                <MobileView>
+                    <OfferSectionTitle>Oferta</OfferSectionTitle>
+                </MobileView>
                 <OfferItemsContainer>
                     <OfferGridContainer>
                         <OfferItem>

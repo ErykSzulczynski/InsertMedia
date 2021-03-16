@@ -3,6 +3,8 @@ import logo from '../assets/logo.png';
 import styled from 'styled-components';
 import { BrowserView, MobileView } from "react-device-detect";
 import pattern from '../assets/pattern_black.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowDown } from '@fortawesome/free-solid-svg-icons'
 
 
 import Slider from './Slider';
@@ -11,6 +13,7 @@ const HomeContainer = styled.div`
     @media (max-width: 768px) {
         position: relative;
         height: 100vh;
+        margin-bottom: 20vh;
     }
 `;
 
@@ -46,17 +49,33 @@ const PatternLeft = styled.img`
             z-index: 1 !important;
         `;
 
+const ArrowDown = styled.p`
+    color: white;
+    font-size: 3rem;
+    position: absolute;
+    bottom: 5vh;
+    width: 100%;
+    text-align: center;
+`;
+
 export default function Home() {
     return (
         <div>
             <HomeContainer>
-                <PatternLeft src={pattern}/>
+                <MobileView>
+                    <PatternLeft src={pattern}/>
+                </MobileView>
                 <LogoContainer>
                     <Logo src={logo} alt="Insert Media"/>
                 </LogoContainer>
                 <BrowserView>
                     <Slider/>
                 </BrowserView>
+                <MobileView>
+                    <ArrowDown>
+                        <FontAwesomeIcon icon={faArrowDown} />
+                    </ArrowDown>
+                </MobileView>
             </HomeContainer>
         </div>
     )
