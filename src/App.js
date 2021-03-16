@@ -108,6 +108,10 @@ export default class App extends Component {
             opacity: 0.1;
             transform: rotate(-45deg);
             z-index: 1 !important;
+
+            @media (max-width: 768px) {
+                left: 0;
+            }
         `;
 
         const PatternRight = styled.img`
@@ -158,7 +162,6 @@ export default class App extends Component {
                                 control={<Switch checked={false} />}
                             />
                             </FormGroup>*/}
-                            
                         </ModeSwitch>
                     </Footer>
                 </BrowserView>

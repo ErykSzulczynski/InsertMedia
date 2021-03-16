@@ -1,12 +1,15 @@
 import React, { useState } from 'react'
 import logo from '../assets/logo.png';
 import styled from 'styled-components';
-import { BrowserView } from "react-device-detect";
+import { BrowserView, MobileView } from "react-device-detect";
+import pattern from '../assets/pattern_black.png';
+
 
 import Slider from './Slider';
 
 const HomeContainer = styled.div`
     @media (max-width: 768px) {
+        position: relative;
         height: 100vh;
     }
 `;
@@ -33,10 +36,21 @@ const Logo = styled.img`
     }
 `;
 
+const PatternLeft = styled.img`
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 100vh;
+            opacity: 0.1;
+            transform: rotate(-45deg);
+            z-index: 1 !important;
+        `;
+
 export default function Home() {
     return (
         <div>
             <HomeContainer>
+                <PatternLeft src={pattern}/>
                 <LogoContainer>
                     <Logo src={logo} alt="Insert Media"/>
                 </LogoContainer>
