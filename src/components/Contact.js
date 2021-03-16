@@ -9,6 +9,11 @@ export default class Contact extends Component {
             height: 90vh;
             position: relative;
             z-index: 100 !important;
+
+            @media (max-width: 768px) {
+                height: auto;
+                min-height: 90vh;
+            }
         `;
 
         const ContactContainer = styled.div`
@@ -22,8 +27,12 @@ export default class Contact extends Component {
             justify-content: space-between;
 
             @media (max-width: 768px) {
-                flex-direction: column;
                 width: 90vw;
+                flex-direction: column;
+                position: static;
+                transform: none;
+                left: auto;
+                top: auto;
             }
         `;
 
@@ -116,6 +125,10 @@ export default class Contact extends Component {
             opacity: 0.1;
             left: 20vw;
             z-index: 1;
+
+            @media (max-width: 768px) {
+                visibility: hidden;
+            }
         `;
 
         return (

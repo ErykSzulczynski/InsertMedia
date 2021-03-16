@@ -11,7 +11,13 @@ export default class Offer extends Component {
             position: relative;
             width: 100%;
             height: 90vh;
-            z-index: 100 !important
+            z-index: 100 !important;
+
+            @media (max-width: 768px) {
+                position: static;
+                height: auto;
+                min-height: 90vh;
+            }
         `;
 
         const OfferItemsContainer = styled.div`
@@ -20,7 +26,10 @@ export default class Offer extends Component {
             transform: translate(-50%,-50%);
 
             @media (max-width: 768px) {
-                position: relative;
+                position: static;
+                transform: none;
+                left: auto;
+                top: auto;
             }
         `;
 

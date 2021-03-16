@@ -9,6 +9,13 @@ export default function About(props) {
         height: 90vh;
         color: white;
         z-index: 100 !important;
+
+        @media (max-width: 768px) {
+            min-height: 90vh;
+            height: auto;
+            margin-bottom: 10vh;
+            position: static;
+        }
     `;
 
     const AboutContent = styled.div`
@@ -21,6 +28,9 @@ export default function About(props) {
         @media (max-width: 768px) {
             flex-direction: column;
             position: relative;
+            transform: none;
+            left: auto;
+            top: auto;
         }
     `;
 
