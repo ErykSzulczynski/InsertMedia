@@ -28,6 +28,7 @@ export default class App extends Component {
         this.state = {
             activeSection: "home",
             isMobileOpen: false,
+            mobileDetails: false
         }
 
         this.switchSection = this.switchSection.bind(this);
@@ -39,6 +40,21 @@ export default class App extends Component {
                 activeSection: name
             } 
         });
+
+        if(name == "about-details" || name == "offer-details" || name == "offers-section"){
+            this.setState(() => {
+                return {
+                    mobileDetails: true
+                } 
+            });
+        } else{
+            this.setState(() => {
+                return {
+                    activeSection: "home",
+                    mobileDetails: false
+                } 
+            });
+        }
     }
 
     toggleMobile = () => {
@@ -126,7 +142,7 @@ export default class App extends Component {
         return (
             <App>
                 <MobileView>
-                    <NavbarMobile/>
+                    {this.state.mobileDetails ? null : <NavbarMobile/>}
                 </MobileView>
                 <BrowserView>
                     <NavbarTop switch={this.switchSection}/>
@@ -166,9 +182,9 @@ export default class App extends Component {
                     </Footer>
                 </BrowserView>
                 <MobileView>
-                    <About/>
-                    <Offer/>
-                    <Contact/>
+                    {this.state.mobileDetails ? null : <About switch={this.switchSection}/>}
+                    {this.state.mobileDetails ? null : <Offer switch={this.switchSection}/>}
+                    {this.state.mobileDetails ? null : <Contact/>}
                 </MobileView>
                 {/*<About />*/}
             </App>

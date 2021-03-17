@@ -17,6 +17,11 @@ export default function OfferDetails(props) {
         width: 50vw;
         margin: 0 auto;
         margin-top: 5vh;
+
+        @media (max-width: 768px) {
+            width: 90vw;
+            margin-bottom: 5vh;
+        }
     `;
 
     const AboutText = styled.div`
@@ -29,6 +34,14 @@ export default function OfferDetails(props) {
         text-transform: uppercase;
         font-size: 2.3rem;
         margin-top: 0;
+    `;
+
+    const AboutImage = styled.img`
+        border-radius: 5px;
+
+        @media (max-width: 768px) {
+            max-width: 80vw;
+        }
     `;
 
     const GoBack = styled.div`

@@ -55,10 +55,14 @@ export default class Contact extends Component {
         `;
 
         const ContactInfo = styled.div`
-            font-size: 2rem;
+            font-size: 4rem;
             color: white;
             font-weight: bolder;
             margin-top: 3vh;
+
+            @media (max-width: 768px) {
+                font-size: 2rem;
+            }
         `;
 
         const ContactIcon = styled.span`

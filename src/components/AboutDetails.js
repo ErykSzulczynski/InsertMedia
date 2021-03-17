@@ -18,6 +18,11 @@ export default function AboutDetails(props) {
         width: 50vw;
         margin: 0 auto;
         margin-top: 5vh;
+
+        @media (max-width: 768px) {
+            width: 90vw;
+            margin-bottom: 5vh;
+        }
     `;
 
     const AboutText = styled.div`
@@ -39,6 +44,10 @@ export default function AboutDetails(props) {
 
     const AboutImage = styled.img`
         border-radius: 5px;
+
+        @media (max-width: 768px) {
+            max-width: 80vw;
+        }
     `;
 
     const AboutImageText = styled.p`

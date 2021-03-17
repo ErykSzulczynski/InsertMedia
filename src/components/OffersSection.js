@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 export default function OffersSection(props) {
     const Offer = styled.div`
@@ -8,6 +10,13 @@ export default function OffersSection(props) {
             min-height: 90vh;
             margin-bottom: 5vh;
             z-index: 100 !imporant;
+
+            @media (max-width: 768px) {
+                position: static;
+                height: auto;
+                min-height: 90vh;
+                margin-bottom: 3vh;
+            }
         `;
 
         const OfferItemsContainer = styled.div`
@@ -15,6 +24,13 @@ export default function OffersSection(props) {
             margin: 0 auto;
             margin-top: 5vh;
             z-index: 100 !important;
+
+            @media (max-width: 768px) {
+                position: static;
+                transform: none;
+                left: auto;
+                top: auto;
+            }
         `;
 
         const OfferGridContainer = styled.div`
@@ -23,6 +39,11 @@ export default function OffersSection(props) {
             width: 70vw;
             margin: 0 auto;
             grid-gap: 5vw;
+
+            @media (max-width: 768px) {
+                width: 90vw;
+                grid-template-columns: auto;
+            }
         `;
 
         const OfferItem = styled.div`
@@ -30,6 +51,12 @@ export default function OffersSection(props) {
             padding: 1vw;
             border-radius: 5px;
             background: white;
+
+            @media (max-width: 768px) {
+                width: 80vw;
+                padding: 5vw;
+                margin-bottom: 10vh;
+            }
         `;
 
         const OfferTitle = styled.h2`
@@ -95,10 +122,36 @@ export default function OffersSection(props) {
                 color: white;
                 background: #6AA0A2;
             }
+
+            @media (max-width: 768px) {
+                width: 90%;
+                margin-top: 0;
+                margin-bottom: 10vh;
+            }
+        `;
+
+        const GoBack = styled.div`
+            cursor: pointer;
+            color: #6AA0A2;
+            font-size: 1.5rem;
+            font-weight: bolder;
+            padding-bottom: 3vh;
+
+            &:hover{
+                text-decoration: underline; 
+            }
+            margin: 5vw;
+        `;
+
+        const GoBackText = styled.span`
+            padding-left: 0.5vw;
         `;
 
         return (
             <Offer>
+                <GoBack onClick={() => props.switch('about')}>
+                    <FontAwesomeIcon icon={faArrowLeft} /><GoBackText>Powrót</GoBackText>
+                </GoBack>
                 <OfferItemsContainer>
                     <OfferGridContainer>
                         <OfferItem>
