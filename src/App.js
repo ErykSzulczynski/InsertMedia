@@ -7,6 +7,7 @@ import { Switch, FormGroup, FormControl, FormControlLabel, formatMs } from '@mat
 import { BrowserView, MobileView} from "react-device-detect";
 import React, { Component } from 'react';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
+import BeatLoader from "react-spinners/BeatLoader";
 
 import pattern from './assets/pattern_black.png';
 
@@ -28,10 +29,19 @@ export default class App extends Component {
         this.state = {
             activeSection: "home",
             isMobileOpen: false,
-            mobileDetails: false
+            mobileDetails: false,
+            isLoading: true
         }
 
         this.switchSection = this.switchSection.bind(this);
+    }
+
+    componentDidMount(){
+        this.setState(() => {
+            return {
+                isLoading: false
+            } 
+        });
     }
 
     switchSection = (name) => {
@@ -139,8 +149,16 @@ export default class App extends Component {
             z-index: 1 !important;
         `;
 
+        const LoaderContainer = styled.div`
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%,-50%);
+        `;
+
         return (
+            
             <App>
+                {this.state.isLoading ? <LoaderContainer><BeatLoader loading={this.state.isLoading} color="white" size={30} /></LoaderContainer> : <div>
                 <MobileView>
                     {this.state.mobileDetails ? null : <NavbarMobile/>}
                 </MobileView>
@@ -186,7 +204,7 @@ export default class App extends Component {
                     {this.state.mobileDetails ? null : <Offer switch={this.switchSection}/>}
                     {this.state.mobileDetails ? null : <Contact/>}
                 </MobileView>
-                {/*<About />*/}
+                {/*<About />*/}</div>}
             </App>
         );
     }
