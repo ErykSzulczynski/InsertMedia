@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import userImage from '../assets/sample2.jpg';
 
-export default class Team extends Component {
-    render() {
+import {useTransition, animated, useSpring} from 'react-spring';
+
+export default function Team(){
         const Team = styled.div`
             position: relative;
             z-index: 100 !important;
@@ -48,42 +49,45 @@ export default class Team extends Component {
             margin: 1vh 0;
         `;
 
+        const textAnimation = useSpring({to: {opacity: 1, top: 0}, from: {opacity: 0, top: 200}, delay: 200});
+
         return (
             <Team>
-                <TeamGridContainer>
-                    <TeamItem>
-                        <TeamPhoto></TeamPhoto>
-                        <TeamName>Jan Kowalski</TeamName>
-                        <TeamRole>Designer</TeamRole>
-                    </TeamItem>
-                    <TeamItem>
-                        <TeamPhoto></TeamPhoto>
-                        <TeamName>Jan Kowalski</TeamName>
-                        <TeamRole>Designer</TeamRole>
-                    </TeamItem>
-                    <TeamItem>
-                        <TeamPhoto></TeamPhoto>
-                        <TeamName>Jan Kowalski</TeamName>
-                        <TeamRole>Designer</TeamRole>
-                    </TeamItem>
-                    <TeamItem>
-                        <TeamPhoto></TeamPhoto>
-                        <TeamName>Jan Kowalski</TeamName>
-                        <TeamRole>Designer</TeamRole>
-                    </TeamItem>
-                    <TeamItem>
-                        <TeamPhoto></TeamPhoto>
-                        <TeamName>Jan Kowalski</TeamName>
-                        <TeamRole>Designer</TeamRole>
-                    </TeamItem>
-                    <TeamItem>
-                        <TeamPhoto></TeamPhoto>
-                        <TeamName>Jan Kowalski</TeamName>
-                        <TeamRole>Designer</TeamRole>
-                    </TeamItem>
-                </TeamGridContainer>
+                <animated.div style={textAnimation} className="animation__logo">
+                    <TeamGridContainer>
+                        <TeamItem>
+                            <TeamPhoto></TeamPhoto>
+                            <TeamName>Jan Kowalski</TeamName>
+                            <TeamRole>Designer</TeamRole>
+                        </TeamItem>
+                        <TeamItem>
+                            <TeamPhoto></TeamPhoto>
+                            <TeamName>Jan Kowalski</TeamName>
+                            <TeamRole>Designer</TeamRole>
+                        </TeamItem>
+                        <TeamItem>
+                            <TeamPhoto></TeamPhoto>
+                            <TeamName>Jan Kowalski</TeamName>
+                            <TeamRole>Designer</TeamRole>
+                        </TeamItem>
+                        <TeamItem>
+                            <TeamPhoto></TeamPhoto>
+                            <TeamName>Jan Kowalski</TeamName>
+                            <TeamRole>Designer</TeamRole>
+                        </TeamItem>
+                        <TeamItem>
+                            <TeamPhoto></TeamPhoto>
+                            <TeamName>Jan Kowalski</TeamName>
+                            <TeamRole>Designer</TeamRole>
+                        </TeamItem>
+                        <TeamItem>
+                            <TeamPhoto></TeamPhoto>
+                            <TeamName>Jan Kowalski</TeamName>
+                            <TeamRole>Designer</TeamRole>
+                        </TeamItem>
+                    </TeamGridContainer>
+                </animated.div>
             </Team>
         )
-    }
 }
 
