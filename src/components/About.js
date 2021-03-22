@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import aboutImage from '../assets/about-image.jpg';
 
+import {useTransition, animated, useSpring} from 'react-spring';
+
 export default function About(props) {
     const About = styled.div`
         position: relative;

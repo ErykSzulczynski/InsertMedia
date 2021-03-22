@@ -6,10 +6,13 @@ import pattern from '../assets/pattern_black.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowDown } from '@fortawesome/free-solid-svg-icons'
 
+import {useTransition, animated, useSpring} from 'react-spring';
+
 
 import Slider from './Slider';
 
 const HomeContainer = styled.div`
+    position: relative;
     @media (max-width: 768px) {
         position: relative;
         height: 100vh;
@@ -59,18 +62,25 @@ const ArrowDown = styled.p`
 `;
 
 export default function Home() {
+    const logoAnimation = useSpring({to: {opacity: 1, top: 0}, from: {opacity: 0, top: 200}});
+    const sliderAnimation = useSpring({to: {opacity: 1, top: 0}, from: {opacity: 0, top: 200}, delay: 200});
+    
     return (
         <div>
             <HomeContainer id="home">
                 <MobileView>
                     <PatternLeft src={pattern}/>
                 </MobileView>
-                <LogoContainer>
-                    <Logo src={logo} alt="Insert Media"/>
-                </LogoContainer>
-                <BrowserView>
-                    <Slider/>
-                </BrowserView>
+                <animated.div style={logoAnimation} className="animation__logo">
+                    <LogoContainer>
+                        <Logo src={logo} alt="Insert Media"/>
+                    </LogoContainer>
+                </animated.div>
+                <animated.div style={sliderAnimation} className="animation__logo">
+                    <BrowserView>
+                        <Slider/>
+                    </BrowserView>
+                </animated.div>
                 <MobileView>
                     <ArrowDown>
                         <FontAwesomeIcon icon={faArrowDown} />
