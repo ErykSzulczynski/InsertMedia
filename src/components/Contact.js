@@ -3,8 +3,9 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
-export default class Contact extends Component {
-    render() {
+import {useTransition, animated, useSpring} from 'react-spring';
+
+export default function Contact() {
         const Contact = styled.div`
             height: 90vh;
             position: relative;
@@ -38,7 +39,7 @@ export default class Contact extends Component {
         `;
 
         const ContactLeftPanel = styled.div`
-            width: 60%;
+            width: 100%;
 
             @media (max-width: 768px) {
                 width: 90%;
@@ -47,7 +48,7 @@ export default class Contact extends Component {
         `;
 
         const ContactRightPanel = styled.div`
-            width: 40%;
+            width: 100%;
 
             @media (max-width: 768px) {
                 width: 100%;
@@ -135,38 +136,47 @@ export default class Contact extends Component {
             color: black;
             opacity: 0.1;
             left: 20vw;
-            z-index: 1;
+            z-index: 1 !important;
 
             @media (max-width: 768px) {
                 visibility: hidden;
             }
         `;
 
+        const imgAnimation = useSpring({to: {opacity: 1, left: 0}, from: {opacity: 0, left: 200}});
+        const iconAnimation = useSpring({to: {opacity: 1}, from: {opacity: 0}});
+        const textAnimation = useSpring({to: {opacity: 1, top: 0}, from: {opacity: 0, top: 200}, delay: 200});
+
         return (
             <Contact id="contact">
                 <ContactContainer>
-                    <ContactBackground><FontAwesomeIcon icon={faPhone} /></ContactBackground>
-                    <ContactLeftPanel>
-                        <ContactInfo>
-                            <ContactIcon><FontAwesomeIcon icon={faPhone} /></ContactIcon>example@gmail.com
-                        </ContactInfo>
-                        <ContactInfo>
-                            <ContactIcon><FontAwesomeIcon icon={faEnvelope} /></ContactIcon>+48 520 122 041
-                        </ContactInfo>
-                    </ContactLeftPanel>
-                    <ContactRightPanel>
-                        <ContactForm>
-                        <form>
-                            <FormText>Wyślij nam wiadomość</FormText>
-                            <FormInput type="text" name="email" placeholder="Twój email"/><br/>
-                            <FormTextarea placeholder="Wiadomość"></FormTextarea><br/>
-                            <FormSend>Wyślij</FormSend>
-                        </form>
-                        </ContactForm>
-                    </ContactRightPanel>
+                    <animated.div style={iconAnimation} className="animation__logo">
+                        <ContactBackground><FontAwesomeIcon icon={faPhone} /></ContactBackground>
+                    </animated.div>
+                    <animated.div style={imgAnimation} className="animation__logo">
+                        <ContactLeftPanel>
+                            <ContactInfo>
+                                <ContactIcon><FontAwesomeIcon icon={faPhone} /></ContactIcon>example@gmail.com
+                            </ContactInfo>
+                            <ContactInfo>
+                                <ContactIcon><FontAwesomeIcon icon={faEnvelope} /></ContactIcon>+48 520 122 041
+                            </ContactInfo>
+                        </ContactLeftPanel>
+                    </animated.div>
+                    <animated.div style={textAnimation} className="animation__logo">
+                        <ContactRightPanel>
+                            <ContactForm>
+                            <form>
+                                <FormText>Wyślij nam wiadomość</FormText>
+                                <FormInput type="text" name="email" placeholder="Twój email"/><br/>
+                                <FormTextarea placeholder="Wiadomość"></FormTextarea><br/>
+                                <FormSend>Wyślij</FormSend>
+                            </form>
+                            </ContactForm>
+                        </ContactRightPanel>
+                    </animated.div>
                 </ContactContainer>
             </Contact>
         )
-    }
 }
 
