@@ -19,14 +19,20 @@ textarea {
 .bm-burger-button {
   position: fixed;
   width: 36px;
-  height: 30px;
-  left: 36px;
-  top: 36px;
+  height: 36px;
+  left: 18px;
+  top: 18px;
+  background: #6AA0A2;
+  color: white;
+  border-radius: 50%;
+  padding:5vw;
 }
 
 /* Color/shape of burger icon bars */
 .bm-burger-bars {
   background: white;
+  width: 36px;
+  height: 30px;
 }
 
 /* Color/shape of burger icon bars on hover*/

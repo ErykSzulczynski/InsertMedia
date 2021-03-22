@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHome, faMoon } from '@fortawesome/free-solid-svg-icons'
 import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons'
 import { Switch, FormGroup, FormControl, FormControlLabel, formatMs } from '@material-ui/core';
-import { BrowserView, MobileView} from "react-device-detect";
+import { BrowserView, MobileView, isMobile} from "react-device-detect";
 import React, { Component } from 'react';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import BeatLoader from "react-spinners/BeatLoader";
@@ -51,19 +51,21 @@ export default class App extends Component {
             } 
         });
 
-        if(name == "about-details" || name == "offer-details" || name == "offers-section"){
-            this.setState(() => {
-                return {
-                    mobileDetails: true
-                } 
-            });
-        } else{
-            this.setState(() => {
-                return {
-                    activeSection: "home",
-                    mobileDetails: false
-                } 
-            });
+        if(isMobile){
+            if(name == "about-details" || name == "offer-details" || name == "offers-section"){
+                this.setState(() => {
+                    return {
+                        mobileDetails: true
+                    } 
+                });
+            } else{
+                this.setState(() => {
+                    return {
+                        activeSection: "home",
+                        mobileDetails: false
+                    } 
+                });
+            }
         }
     }
 
