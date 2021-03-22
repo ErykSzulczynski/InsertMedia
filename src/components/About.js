@@ -39,7 +39,7 @@ export default function About(props) {
     `;
 
     const AboutImageContainer = styled.div`
-        width: 35%;
+        width: 15vw;
         border: 2px solid white;
         border-radius: 5px;
         height: 55vh;
@@ -51,7 +51,7 @@ export default function About(props) {
     `;
 
     const AboutText = styled.div`
-        width: 70%;
+        width: 100%;
         padding-left: 3vw;
         font-size: 1.2rem;
 
@@ -93,28 +93,35 @@ export default function About(props) {
         }
     `;
 
+    const imgAnimation = useSpring({to: {opacity: 1, left: 0}, from: {opacity: 0, left: 200}});
+    const textAnimation = useSpring({to: {opacity: 1, top: 0}, from: {opacity: 0, top: 200}, delay: 200});
+
     return (
         <About id="about">
             <AboutContent>
-                <AboutImageContainer/>
-                <AboutText>
-                    <AboutTitle>
-                        Tytuł sekcji
-                    </AboutTitle>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam augue eros, venenatis vel placerat vitae, congue sit amet nisl.
-                    Sed interdum ante nec malesuada venenatis. Proin tincidunt in quam at facilisis. Nulla ut rhoncus ipsum. Sed ante sem,
-                    placerat vitae leo sit amet, congue bibendum lorem. Duis sagittis lacinia urna at feugiat. Duis dictum, tortor ut aliquet consequat,
-                    orci enim dignissim massa, a convallis ipsum est in nulla. Vestibulum sit amet commodo odio, sit amet finibus dolor.
-                    Duis pharetra ullamcorper justo, ut porttitor magna eleifend lacinia.<br/><br/>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam augue eros, venenatis vel placerat vitae, congue sit amet nisl.
-                    Sed interdum ante nec malesuada venenatis. Proin tincidunt in quam at facilisis. Nulla ut rhoncus ipsum. Sed ante sem,
-                    placerat vitae leo sit amet, congue bibendum lorem. Duis sagittis lacinia urna at feugiat. Duis dictum, tortor ut aliquet consequat,
-                    orci enim dignissim massa, a convallis ipsum est in nulla. Vestibulum sit amet commodo odio, sit amet finibus dolor.
-                    Duis pharetra ullamcorper justo, ut porttitor magna eleifend lacinia.
-                    <AboutReadMore onClick={() => {props.switch("about-details")}}>
-                        Zobacz więcej
-                    </AboutReadMore>
-                </AboutText>
+                <animated.div style={imgAnimation} className="animation__logo">
+                    <AboutImageContainer/>
+                </animated.div>
+                <animated.div style={textAnimation} className="animation__logo">
+                    <AboutText>
+                        <AboutTitle>
+                            Tytuł sekcji
+                        </AboutTitle>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam augue eros, venenatis vel placerat vitae, congue sit amet nisl.
+                        Sed interdum ante nec malesuada venenatis. Proin tincidunt in quam at facilisis. Nulla ut rhoncus ipsum. Sed ante sem,
+                        placerat vitae leo sit amet, congue bibendum lorem. Duis sagittis lacinia urna at feugiat. Duis dictum, tortor ut aliquet consequat,
+                        orci enim dignissim massa, a convallis ipsum est in nulla. Vestibulum sit amet commodo odio, sit amet finibus dolor.
+                        Duis pharetra ullamcorper justo, ut porttitor magna eleifend lacinia.<br/><br/>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam augue eros, venenatis vel placerat vitae, congue sit amet nisl.
+                        Sed interdum ante nec malesuada venenatis. Proin tincidunt in quam at facilisis. Nulla ut rhoncus ipsum. Sed ante sem,
+                        placerat vitae leo sit amet, congue bibendum lorem. Duis sagittis lacinia urna at feugiat. Duis dictum, tortor ut aliquet consequat,
+                        orci enim dignissim massa, a convallis ipsum est in nulla. Vestibulum sit amet commodo odio, sit amet finibus dolor.
+                        Duis pharetra ullamcorper justo, ut porttitor magna eleifend lacinia.
+                        <AboutReadMore onClick={() => {props.switch("about-details")}}>
+                            Zobacz więcej
+                        </AboutReadMore>
+                    </AboutText>
+                </animated.div>
             </AboutContent>
         </About>
     )
