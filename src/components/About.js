@@ -92,7 +92,7 @@ export default function About(props) {
     `;
 
     return (
-        <About>
+        <About id="about">
             <AboutContent>
                 <AboutImageContainer/>
                 <AboutText>

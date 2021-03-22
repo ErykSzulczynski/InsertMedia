@@ -146,7 +146,7 @@ export default class Offer extends Component {
         `;
 
         return (
-            <Offer>
+            <Offer id="offer">
                 <MobileView>
                     <OfferSectionTitle>Oferta</OfferSectionTitle>
                 </MobileView>

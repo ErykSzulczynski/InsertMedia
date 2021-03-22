@@ -143,7 +143,7 @@ export default class Contact extends Component {
         `;
 
         return (
-            <Contact>
+            <Contact id="contact">
                 <ContactContainer>
                     <ContactBackground><FontAwesomeIcon icon={faPhone} /></ContactBackground>
                     <ContactLeftPanel>

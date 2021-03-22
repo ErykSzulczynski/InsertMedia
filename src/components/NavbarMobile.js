@@ -5,8 +5,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHome, faHandshake, faUsers, faShoppingBasket, faIdBadge, faBars } from '@fortawesome/free-solid-svg-icons'
 import styled from 'styled-components';
 
-const NavbarLink = styled.div`
+const NavbarLink = styled.a`
+    display: block;
     margin: 4vh 0;
+    color: white;
+    text-decoration: none;
 `;
 
 const NavbarLinkText = styled.span`
@@ -32,7 +35,7 @@ export default class NavbarMobile extends Component {
     render(){
         return (
                 <Menu customBurgerIcon={ <FontAwesomeIcon icon={faBars} /> }>
-                    <NavbarLink onClick={() => this.props.switch("home")}>
+                        <NavbarLink href="#home">
                             <NavbarLinkIcon>
                                 <FontAwesomeIcon icon={faHome} />
                             </NavbarLinkIcon>
@@ -40,7 +43,7 @@ export default class NavbarMobile extends Component {
                                 Strona główna
                             </NavbarLinkText>
                         </NavbarLink>
-                        <NavbarLink onClick={() => this.props.switch("about")}>
+                        <NavbarLink href="#about">
                             <NavbarLinkIcon>
                                 <FontAwesomeIcon icon={faHandshake} />
                             </NavbarLinkIcon>
@@ -48,7 +51,7 @@ export default class NavbarMobile extends Component {
                                 O nas
                             </NavbarLinkText>
                         </NavbarLink>
-                        <NavbarLink onClick={() => this.props.switch("offer")}>
+                        <NavbarLink href="#offer">
                             <NavbarLinkIcon>
                                 <FontAwesomeIcon icon={faShoppingBasket} />
                             </NavbarLinkIcon>
@@ -64,7 +67,7 @@ export default class NavbarMobile extends Component {
                                 Zespół
                             </NavbarLinkText>
                             </NavbarLink>*/}
-                        <NavbarLink onClick={() => this.props.switch("contact")}> 
+                        <NavbarLink href="#contact"> 
                             <NavbarLinkIcon>
                                 <FontAwesomeIcon icon={faIdBadge} />
                             </NavbarLinkIcon>

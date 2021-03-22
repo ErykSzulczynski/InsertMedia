@@ -61,7 +61,7 @@ const ArrowDown = styled.p`
 export default function Home() {
     return (
         <div>
-            <HomeContainer>
+            <HomeContainer id="home">
                 <MobileView>
                     <PatternLeft src={pattern}/>
                 </MobileView>
