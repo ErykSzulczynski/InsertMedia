@@ -4,7 +4,7 @@ import { BrowserView, MobileView } from "react-device-detect";
 
 import {useTransition, animated, useSpring} from 'react-spring';
 
-export default function Offer() {
+export default function Offer(props) {
         const Offer = styled.div`
             position: relative;
             width: 100%;
@@ -168,7 +168,7 @@ export default function Offer() {
                                 <OfferText>
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id metus libero. Nulla eget lacus elit. Donec volutpat varius urna id finibus. Nunc bibendum semper auctor. Curabitur sit amet placerat neque, sit amet congue odio. Vestibulum suscipit, elit at semper pharetra, dui nibh hendrerit tortor, eget rhoncus eros nunc ut lacus. Suspendisse massa lectus, viverra at ligula in, bibendum pulvinar orci. Nulla hendrerit tristique eleifend. Nunc ullamcorper lorem sed rhoncus consectetur. Praesent eu augue turpis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
                                 </OfferText>
-                                <OfferDetails onClick={() => {this.props.switch('offer-details')}}>
+                                <OfferDetails onClick={() => {props.switch('offer-details')}}>
                                     Szczegóły
                                 </OfferDetails>
                             </OfferItem>
@@ -188,7 +188,7 @@ export default function Offer() {
                                 <OfferText>
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id metus libero. Nulla eget lacus elit. Donec volutpat varius urna id finibus. Nunc bibendum semper auctor. Curabitur sit amet placerat neque, sit amet congue odio. Vestibulum suscipit, elit at semper pharetra, dui nibh hendrerit tortor, eget rhoncus eros nunc ut lacus. Suspendisse massa lectus, viverra at ligula in, bibendum pulvinar orci. Nulla hendrerit tristique eleifend. Nunc ullamcorper lorem sed rhoncus consectetur. Praesent eu augue turpis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
                                 </OfferText>
-                                <OfferDetails onClick={() => {this.props.switch('offer-details')}}>
+                                <OfferDetails onClick={() => {props.switch('offer-details')}}>
                                     Szczegóły
                                 </OfferDetails>
                             </OfferItem>
@@ -208,14 +208,14 @@ export default function Offer() {
                                 <OfferText>
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id metus libero. Nulla eget lacus elit. Donec volutpat varius urna id finibus. Nunc bibendum semper auctor. Curabitur sit amet placerat neque, sit amet congue odio. Vestibulum suscipit, elit at semper pharetra, dui nibh hendrerit tortor, eget rhoncus eros nunc ut lacus. Suspendisse massa lectus, viverra at ligula in, bibendum pulvinar orci. Nulla hendrerit tristique eleifend. Nunc ullamcorper lorem sed rhoncus consectetur. Praesent eu augue turpis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
                                 </OfferText>
-                                <OfferDetails onClick={() => {this.props.switch('offer-details')}}>
+                                <OfferDetails onClick={() => {props.switch('offer-details')}}>
                                     Szczegóły
                                 </OfferDetails>
                             </OfferItem>
                         </OfferGridContainer>
                     </animated.div>
                     <animated.div style={buttonAnimation} className="animation__logo">
-                        <OfferReadMore onClick={() => {this.props.switch('offers-section')}}>
+                        <OfferReadMore onClick={() => {props.switch('offers-section')}}>
                             Zobacz więcej
                         </OfferReadMore>
                     </animated.div>

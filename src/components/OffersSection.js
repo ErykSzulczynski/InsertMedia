@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
+import {useTransition, animated, useSpring} from 'react-spring';
+
 export default function OffersSection(props) {
     const Offer = styled.div`
             position: relative;
@@ -147,133 +149,137 @@ export default function OffersSection(props) {
             padding-left: 0.5vw;
         `;
 
+        const gridAnimation = useSpring({to: {opacity: 1, top: 0}, from: {opacity: 0, top: 200}});
+
         return (
             <Offer>
-                <GoBack onClick={() => props.switch('about')}>
-                    <FontAwesomeIcon icon={faArrowLeft} /><GoBackText>Powrót</GoBackText>
-                </GoBack>
-                <OfferItemsContainer>
-                    <OfferGridContainer>
-                        <OfferItem>
-                            <OfferTitle>
-                                Title
-                            </OfferTitle>
-                            <OfferPrice>
-                                <OfferUnit>
-                                    PLN
-                                </OfferUnit>
-                                <OfferAmount>
-                                    100
-                                </OfferAmount>
-                            </OfferPrice>
-                            <OfferText>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id metus libero. Nulla eget lacus elit. Donec volutpat varius urna id finibus. Nunc bibendum semper auctor. Curabitur sit amet placerat neque, sit amet congue odio. Vestibulum suscipit, elit at semper pharetra, dui nibh hendrerit tortor, eget rhoncus eros nunc ut lacus. Suspendisse massa lectus, viverra at ligula in, bibendum pulvinar orci. Nulla hendrerit tristique eleifend. Nunc ullamcorper lorem sed rhoncus consectetur. Praesent eu augue turpis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-                            </OfferText>
-                            <OfferDetails onClick={() => {props.switch('offer-details')}}>
-                                Szczegóły
-                            </OfferDetails>
-                        </OfferItem>
+                <animated.div style={gridAnimation} className="animation__logo">
+                    <GoBack onClick={() => props.switch('about')}>
+                        <FontAwesomeIcon icon={faArrowLeft} /><GoBackText>Powrót</GoBackText>
+                    </GoBack>
+                    <OfferItemsContainer>
+                        <OfferGridContainer>
+                            <OfferItem>
+                                <OfferTitle>
+                                    Title
+                                </OfferTitle>
+                                <OfferPrice>
+                                    <OfferUnit>
+                                        PLN
+                                    </OfferUnit>
+                                    <OfferAmount>
+                                        100
+                                    </OfferAmount>
+                                </OfferPrice>
+                                <OfferText>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id metus libero. Nulla eget lacus elit. Donec volutpat varius urna id finibus. Nunc bibendum semper auctor. Curabitur sit amet placerat neque, sit amet congue odio. Vestibulum suscipit, elit at semper pharetra, dui nibh hendrerit tortor, eget rhoncus eros nunc ut lacus. Suspendisse massa lectus, viverra at ligula in, bibendum pulvinar orci. Nulla hendrerit tristique eleifend. Nunc ullamcorper lorem sed rhoncus consectetur. Praesent eu augue turpis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+                                </OfferText>
+                                <OfferDetails onClick={() => {props.switch('offer-details')}}>
+                                    Szczegóły
+                                </OfferDetails>
+                            </OfferItem>
 
-                        <OfferItem>
-                            <OfferTitle>
-                                Title
-                            </OfferTitle>
-                            <OfferPrice>
-                                <OfferUnit>
-                                    PLN
-                                </OfferUnit>
-                                <OfferAmount>
-                                    100
-                                </OfferAmount>
-                            </OfferPrice>
-                            <OfferText>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id metus libero. Nulla eget lacus elit. Donec volutpat varius urna id finibus. Nunc bibendum semper auctor. Curabitur sit amet placerat neque, sit amet congue odio. Vestibulum suscipit, elit at semper pharetra, dui nibh hendrerit tortor, eget rhoncus eros nunc ut lacus. Suspendisse massa lectus, viverra at ligula in, bibendum pulvinar orci. Nulla hendrerit tristique eleifend. Nunc ullamcorper lorem sed rhoncus consectetur. Praesent eu augue turpis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-                            </OfferText>
-                            <OfferDetails onClick={() => {props.switch('offer-details')}}>
-                                Szczegóły
-                            </OfferDetails>
-                        </OfferItem>
+                            <OfferItem>
+                                <OfferTitle>
+                                    Title
+                                </OfferTitle>
+                                <OfferPrice>
+                                    <OfferUnit>
+                                        PLN
+                                    </OfferUnit>
+                                    <OfferAmount>
+                                        100
+                                    </OfferAmount>
+                                </OfferPrice>
+                                <OfferText>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id metus libero. Nulla eget lacus elit. Donec volutpat varius urna id finibus. Nunc bibendum semper auctor. Curabitur sit amet placerat neque, sit amet congue odio. Vestibulum suscipit, elit at semper pharetra, dui nibh hendrerit tortor, eget rhoncus eros nunc ut lacus. Suspendisse massa lectus, viverra at ligula in, bibendum pulvinar orci. Nulla hendrerit tristique eleifend. Nunc ullamcorper lorem sed rhoncus consectetur. Praesent eu augue turpis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+                                </OfferText>
+                                <OfferDetails onClick={() => {props.switch('offer-details')}}>
+                                    Szczegóły
+                                </OfferDetails>
+                            </OfferItem>
 
-                        <OfferItem>
-                            <OfferTitle>
-                                Title
-                            </OfferTitle>
-                            <OfferPrice>
-                                <OfferUnit>
-                                    PLN
-                                </OfferUnit>
-                                <OfferAmount>
-                                    100
-                                </OfferAmount>
-                            </OfferPrice>
-                            <OfferText>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id metus libero. Nulla eget lacus elit. Donec volutpat varius urna id finibus. Nunc bibendum semper auctor. Curabitur sit amet placerat neque, sit amet congue odio. Vestibulum suscipit, elit at semper pharetra, dui nibh hendrerit tortor, eget rhoncus eros nunc ut lacus. Suspendisse massa lectus, viverra at ligula in, bibendum pulvinar orci. Nulla hendrerit tristique eleifend. Nunc ullamcorper lorem sed rhoncus consectetur. Praesent eu augue turpis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-                            </OfferText>
-                            <OfferDetails onClick={() => {props.switch('offer-details')}}>
-                                Szczegóły
-                            </OfferDetails>
-                        </OfferItem>
-                        <OfferItem>
-                            <OfferTitle>
-                                Title
-                            </OfferTitle>
-                            <OfferPrice>
-                                <OfferUnit>
-                                    PLN
-                                </OfferUnit>
-                                <OfferAmount>
-                                    100
-                                </OfferAmount>
-                            </OfferPrice>
-                            <OfferText>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id metus libero. Nulla eget lacus elit. Donec volutpat varius urna id finibus. Nunc bibendum semper auctor. Curabitur sit amet placerat neque, sit amet congue odio. Vestibulum suscipit, elit at semper pharetra, dui nibh hendrerit tortor, eget rhoncus eros nunc ut lacus. Suspendisse massa lectus, viverra at ligula in, bibendum pulvinar orci. Nulla hendrerit tristique eleifend. Nunc ullamcorper lorem sed rhoncus consectetur. Praesent eu augue turpis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-                            </OfferText>
-                            <OfferDetails onClick={() => {props.switch('offer-details')}}>
-                                Szczegóły
-                            </OfferDetails>
-                        </OfferItem>
+                            <OfferItem>
+                                <OfferTitle>
+                                    Title
+                                </OfferTitle>
+                                <OfferPrice>
+                                    <OfferUnit>
+                                        PLN
+                                    </OfferUnit>
+                                    <OfferAmount>
+                                        100
+                                    </OfferAmount>
+                                </OfferPrice>
+                                <OfferText>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id metus libero. Nulla eget lacus elit. Donec volutpat varius urna id finibus. Nunc bibendum semper auctor. Curabitur sit amet placerat neque, sit amet congue odio. Vestibulum suscipit, elit at semper pharetra, dui nibh hendrerit tortor, eget rhoncus eros nunc ut lacus. Suspendisse massa lectus, viverra at ligula in, bibendum pulvinar orci. Nulla hendrerit tristique eleifend. Nunc ullamcorper lorem sed rhoncus consectetur. Praesent eu augue turpis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+                                </OfferText>
+                                <OfferDetails onClick={() => {props.switch('offer-details')}}>
+                                    Szczegóły
+                                </OfferDetails>
+                            </OfferItem>
+                            <OfferItem>
+                                <OfferTitle>
+                                    Title
+                                </OfferTitle>
+                                <OfferPrice>
+                                    <OfferUnit>
+                                        PLN
+                                    </OfferUnit>
+                                    <OfferAmount>
+                                        100
+                                    </OfferAmount>
+                                </OfferPrice>
+                                <OfferText>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id metus libero. Nulla eget lacus elit. Donec volutpat varius urna id finibus. Nunc bibendum semper auctor. Curabitur sit amet placerat neque, sit amet congue odio. Vestibulum suscipit, elit at semper pharetra, dui nibh hendrerit tortor, eget rhoncus eros nunc ut lacus. Suspendisse massa lectus, viverra at ligula in, bibendum pulvinar orci. Nulla hendrerit tristique eleifend. Nunc ullamcorper lorem sed rhoncus consectetur. Praesent eu augue turpis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+                                </OfferText>
+                                <OfferDetails onClick={() => {props.switch('offer-details')}}>
+                                    Szczegóły
+                                </OfferDetails>
+                            </OfferItem>
 
-                        <OfferItem>
-                            <OfferTitle>
-                                Title
-                            </OfferTitle>
-                            <OfferPrice>
-                                <OfferUnit>
-                                    PLN
-                                </OfferUnit>
-                                <OfferAmount>
-                                    100
-                                </OfferAmount>
-                            </OfferPrice>
-                            <OfferText>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id metus libero. Nulla eget lacus elit. Donec volutpat varius urna id finibus. Nunc bibendum semper auctor. Curabitur sit amet placerat neque, sit amet congue odio. Vestibulum suscipit, elit at semper pharetra, dui nibh hendrerit tortor, eget rhoncus eros nunc ut lacus. Suspendisse massa lectus, viverra at ligula in, bibendum pulvinar orci. Nulla hendrerit tristique eleifend. Nunc ullamcorper lorem sed rhoncus consectetur. Praesent eu augue turpis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-                            </OfferText>
-                            <OfferDetails onClick={() => {props.switch('offer-details')}}>
-                                Szczegóły
-                            </OfferDetails>
-                        </OfferItem>
+                            <OfferItem>
+                                <OfferTitle>
+                                    Title
+                                </OfferTitle>
+                                <OfferPrice>
+                                    <OfferUnit>
+                                        PLN
+                                    </OfferUnit>
+                                    <OfferAmount>
+                                        100
+                                    </OfferAmount>
+                                </OfferPrice>
+                                <OfferText>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id metus libero. Nulla eget lacus elit. Donec volutpat varius urna id finibus. Nunc bibendum semper auctor. Curabitur sit amet placerat neque, sit amet congue odio. Vestibulum suscipit, elit at semper pharetra, dui nibh hendrerit tortor, eget rhoncus eros nunc ut lacus. Suspendisse massa lectus, viverra at ligula in, bibendum pulvinar orci. Nulla hendrerit tristique eleifend. Nunc ullamcorper lorem sed rhoncus consectetur. Praesent eu augue turpis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+                                </OfferText>
+                                <OfferDetails onClick={() => {props.switch('offer-details')}}>
+                                    Szczegóły
+                                </OfferDetails>
+                            </OfferItem>
 
-                        <OfferItem>
-                            <OfferTitle>
-                                Title
-                            </OfferTitle>
-                            <OfferPrice>
-                                <OfferUnit>
-                                    PLN
-                                </OfferUnit>
-                                <OfferAmount>
-                                    100
-                                </OfferAmount>
-                            </OfferPrice>
-                            <OfferText>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id metus libero. Nulla eget lacus elit. Donec volutpat varius urna id finibus. Nunc bibendum semper auctor. Curabitur sit amet placerat neque, sit amet congue odio. Vestibulum suscipit, elit at semper pharetra, dui nibh hendrerit tortor, eget rhoncus eros nunc ut lacus. Suspendisse massa lectus, viverra at ligula in, bibendum pulvinar orci. Nulla hendrerit tristique eleifend. Nunc ullamcorper lorem sed rhoncus consectetur. Praesent eu augue turpis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-                            </OfferText>
-                            <OfferDetails onClick={() => {props.switch('offer-details')}}>
-                                Szczegóły
-                            </OfferDetails>
-                        </OfferItem>
-                    </OfferGridContainer>
-                </OfferItemsContainer>
+                            <OfferItem>
+                                <OfferTitle>
+                                    Title
+                                </OfferTitle>
+                                <OfferPrice>
+                                    <OfferUnit>
+                                        PLN
+                                    </OfferUnit>
+                                    <OfferAmount>
+                                        100
+                                    </OfferAmount>
+                                </OfferPrice>
+                                <OfferText>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id metus libero. Nulla eget lacus elit. Donec volutpat varius urna id finibus. Nunc bibendum semper auctor. Curabitur sit amet placerat neque, sit amet congue odio. Vestibulum suscipit, elit at semper pharetra, dui nibh hendrerit tortor, eget rhoncus eros nunc ut lacus. Suspendisse massa lectus, viverra at ligula in, bibendum pulvinar orci. Nulla hendrerit tristique eleifend. Nunc ullamcorper lorem sed rhoncus consectetur. Praesent eu augue turpis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+                                </OfferText>
+                                <OfferDetails onClick={() => {props.switch('offer-details')}}>
+                                    Szczegóły
+                                </OfferDetails>
+                            </OfferItem>
+                        </OfferGridContainer>
+                    </OfferItemsContainer>
+                </animated.div>
             </Offer>
         )
 }
