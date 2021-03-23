@@ -130,13 +130,11 @@ export default function Contact() {
         `;
 
         const ContactBackground = styled.span`
-            display: block;
             position: absolute;
             font-size: 30rem;
             color: black;
             opacity: 0.1;
             left: 20vw;
-            z-index: 1 !important;
 
             @media (max-width: 768px) {
                 visibility: hidden;

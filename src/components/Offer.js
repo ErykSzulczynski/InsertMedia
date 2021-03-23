@@ -35,7 +35,7 @@ export default function Offer(props) {
         const OfferGridContainer = styled.div`
             display: grid;
             grid-template-columns: auto auto auto;
-            width: 60vw;
+            width: 70vw;
             margin: 0 auto;
             grid-gap: 5vw;
 
@@ -46,8 +46,8 @@ export default function Offer(props) {
         `;
 
         const OfferItem = styled.div`
-            width: 100%;
-            padding: 1vw;
+            width: 90%;
+            padding: 5%;
             border-radius: 5px;
             background: white;
 

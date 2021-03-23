@@ -137,7 +137,8 @@ export default function OffersSection(props) {
             color: #6AA0A2;
             font-size: 1.5rem;
             font-weight: bolder;
-            padding-bottom: 3vh;
+            
+            padding-left: 10vw;
 
             &:hover{
                 text-decoration: underline; 
